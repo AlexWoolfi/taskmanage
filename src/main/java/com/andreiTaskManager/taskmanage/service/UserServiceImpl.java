@@ -17,29 +17,20 @@ public class UserServiceImpl {
     public UserServiceImpl(DaoUserRepositoryJpa daoUserRepositoryJpa) {
         this.daoUserRepositoryJpa = daoUserRepositoryJpa;
     }
-    public User save(User user){
-        return daoUserRepositoryJpa.save(user);
-           }
-
-    public List<User> findAll() {
-         return daoUserRepositoryJpa.findAll();
-           }
-
-    public void delete(User user) {
-               daoUserRepositoryJpa.delete(user);
-           }
-
-
-    public void deleteAll() {
-        daoUserRepositoryJpa.deleteAll();
+    public User findById(Long id) {
+        return daoUserRepositoryJpa.findById(id).orElse(null);
     }
 
-   public void deleteById(Long id) {
+    public List<User> findAll() {
+        return daoUserRepositoryJpa.findAll();
+    }
+
+    public void deleteUserById(Long id) {
         daoUserRepositoryJpa.deleteById(id);
     }
 
-        public User findById(Long id) {
-        return daoUserRepositoryJpa.findById(id).orElse(null);
-        }
+    public void save(User user) {
+        daoUserRepositoryJpa.save(user);
+    }
 
 }

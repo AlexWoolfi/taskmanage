@@ -34,9 +34,9 @@ public class Task {
     @Enumerated
     private Category category;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH,CascadeType.MERGE,CascadeType.DETACH})
-    @JoinColumn(name = "userId")
-    private User user;
+//    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH,CascadeType.MERGE,CascadeType.DETACH})
+//    @JoinColumn(name = "userId")
+//    private User user;
 
 
 }

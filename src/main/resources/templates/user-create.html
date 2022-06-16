@@ -21,7 +21,7 @@
 <!--        </div>-->
         <div class="form-group">
             <label for="FirstName">First Name:</label>
-            <input type="FirstName" class="form-control" id="FirstName" placeholder="First Name" name="First Name" th:field="*{firstName}">
+            <input type="FirstName" class="form-control" id="FirstName" placeholder="First Name" name="FirstName" th:field="*{firstName}">
         </div>
         <div class="form-group">
             <label for="LastName">Last Name:</label>
@@ -45,7 +45,7 @@
         </div>
         <div class="form-group">
             <label for="Role">Role:</label>
-            <input type="Role" class="form-control" id="Role" placeholder="Enter Role" name="Role" th:field="${role}">
+            <input type="Role" class="form-control" id="Role" placeholder="Enter Role" name="Role" th:field="*{role}">
         </div>
         <input type="submit" class="btn btn-primary">
     </form>

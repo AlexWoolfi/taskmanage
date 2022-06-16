@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 
 
-@Repository
+
 public interface DaoUserRepositoryJpa extends JpaRepository<User, Long> {
-    void deleteById(Long id);
+
 }

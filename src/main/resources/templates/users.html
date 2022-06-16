@@ -13,8 +13,9 @@
 <div class="container">
     <h2>Users</h2>
     <div class="col-md-6">
-        <a th:href="@{admin/user-create}" class="btn btn-success btn-product"><span
-                class="glyphicon glyphicon-shopping-cart"></span>Create</a></div>
+
+        <a href="user-create" class="btn btn-info" role="button">New User</a>
+        </div>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -30,19 +31,19 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="usersList:${usersList}">
-            <td th:number="${usersList.userId}"></td>
-            <td th:text="${usersList.fierstName}"></td>
-            <td th:text="${usersList.lastName}"></td>
-            <td th:number="${usersList.age}"></td>
-            <td th:text="${usersList.email}"></td>
-            <td th:text="${usersList.password}"></td>
-            <td th:test="${usersList.dateCreate}"></td>
-            <td th:text="${usersList.role}"></td>
-            <tr>
-<!--            <td><a th:href = "@{user-update/{id}(id=${user.userId})}">Update</a></td>-->
-<!--            <td><a th:href = "@{user-delete/{id}(id=${user.userId})}">Delete</a></td>-->
-            </tr>
+        <tr th:each="user:${usersList}">
+            <td th:text="${user.userId}"></td>
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.age}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:test="${user.dateCreate}"></td>
+            <td th:text="${user.role}"></td>
+            <td><a class="btn btn-warning" th:href = "@{user-update/{id}(id=${user.userId})}">Update</a></td>
+<!--            <td><a class="btn btn-danger" th:href = "@{user-delete/{id}(id=${user.userId})}">Delete</a></td>-->
+            <td><a class="btn btn-danger" th:href = "user-delete">Delete</a></td>
+
         </tr>
         </tbody>
     </table>

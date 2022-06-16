@@ -14,14 +14,14 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+//@Builder
 @Table(name="users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="userId")
-    private long userId;
+    private Long userId;
     @Column
     private String firstName;
     @Column
@@ -38,7 +38,7 @@ public class User {
     @Enumerated
     private Role role;
 
-    @OneToMany(mappedBy = "user", cascade = {CascadeType.REFRESH})
-    private List<Task> tasks;
+//    @OneToMany(mappedBy = "user", cascade = {CascadeType.REFRESH})
+//    private List<Task> tasks;
 
 }
