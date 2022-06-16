@@ -1,25 +1,39 @@
 package com.andreiTaskManager.taskmanage.entity;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-//@Entity
-//@Data
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name="users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String name;
+    @Column(name="userId")
+    private long userId;
+    @Column
+    private String firstName;
+    @Column
     private String lastName;
-    private int old;
+    @Column
+    private int age;
+    @Column
     private String email;
+    @Column
     private String password;
-    private LocalDateTime dateCreate = LocalDateTime.now();
+    @Column
+    private LocalDateTime dateCreate;
 
     @Enumerated
     private Role role;

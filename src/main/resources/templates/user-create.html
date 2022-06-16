@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Stacked form</h2>
+    <form th:action="@{user-create}" th:object="${user}" method="post">
+<!--        <div class="form-group">-->
+<!--            <label for="ID">ID:</label>-->
+<!--            <input type="ID" class="form-control" id="ID" placeholder="ID" name="ID" readonly type = number th:field="*{userId}">-->
+<!--        </div>-->
+        <div class="form-group">
+            <label for="FirstName">First Name:</label>
+            <input type="FirstName" class="form-control" id="FirstName" placeholder="First Name" name="First Name" th:field="*{firstName}">
+        </div>
+        <div class="form-group">
+            <label for="LastName">Last Name:</label>
+            <input type="LastName" class="form-control" id="LastName" placeholder="Last Name" name="LastName" th:field="*{lastName}">
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="age" class="form-control" id="age" placeholder="age" name="age" th:field="*{age}">
+        </div>
+        <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="Email" class="form-control" id="Email" placeholder="Email" name="Email" th:field="*{email}">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" th:field="*{password}">
+        </div>
+        <div class="form-group">
+            <label for="Date">Date:</label>
+            <input type="Date" class="form-control" id="Date" placeholder="Enter Date" name="Date" th:field="*{dateCreate}">
+        </div>
+        <div class="form-group">
+            <label for="Role">Role:</label>
+            <input type="Role" class="form-control" id="Role" placeholder="Enter Role" name="Role" th:field="${role}">
+        </div>
+        <input type="submit" class="btn btn-primary">
+    </form>
+</div>
+
+</body>
+</html>

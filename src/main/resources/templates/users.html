@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Users</h2>
+    <div class="col-md-6">
+        <a th:href="@{admin/user-create}" class="btn btn-success btn-product"><span
+                class="glyphicon glyphicon-shopping-cart"></span>Create</a></div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Create Data</th>
+            <th>Role</th>
+            <th>Tools</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usersList:${usersList}">
+            <td th:number="${usersList.userId}"></td>
+            <td th:text="${usersList.fierstName}"></td>
+            <td th:text="${usersList.lastName}"></td>
+            <td th:number="${usersList.age}"></td>
+            <td th:text="${usersList.email}"></td>
+            <td th:text="${usersList.password}"></td>
+            <td th:test="${usersList.dateCreate}"></td>
+            <td th:text="${usersList.role}"></td>
+            <tr>
+<!--            <td><a th:href = "@{user-update/{id}(id=${user.userId})}">Update</a></td>-->
+<!--            <td><a th:href = "@{user-delete/{id}(id=${user.userId})}">Delete</a></td>-->
+            </tr>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
